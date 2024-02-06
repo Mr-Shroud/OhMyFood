@@ -103,4 +103,44 @@ body {
   position: absolute;
   left: -1%;
   margin-left: 25px;
+}
+.main__restaurant {
+  padding: 20px;
+  padding-top: 30px;
+}
+.main__restaurant__card {
+  position: relative;
+  width: 100%;
+  margin: 18px 0px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+}
+.main__restaurant__card a {
+  text-decoration: none;
+  color: black;
+}
+.main__restaurant__card__img {
+  width: 100%;
+  height: 174px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px 15px 0px 0px;
+}
+.main__restaurant__card__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+.main__restaurant__card__body h3,
+.main__restaurant__card__body p {
+  margin: 0;
+  margin-bottom: 8px;
+}
+.main__restaurant__card__body__heart {
+  display: flex;
+  color: #9356DC;
+  justify-content: flex-end;
+  font-size: 32px;
 }/*# sourceMappingURL=Global.css.map */
