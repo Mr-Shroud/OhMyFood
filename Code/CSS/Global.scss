@@ -10,8 +10,6 @@ body {
     margin: 0px;
 }
 
-
-
 .header {
     display: flex;
     width: 50%;
@@ -169,5 +167,34 @@ body {
                 }
             }
         }
+    }
+}
+
+.footer{
+    background-color: #353535;
+    color: white;
+    padding: 30px 20px;
+
+    &__header-icon{
+        filter: brightness(0) invert(1);
+        width: 25%;
+        padding-bottom: 25px;
+    }
+
+    &__block{
+        margin: 0px;
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 10px;
+
+        p {
+            margin: 0px;
+        }
+    }
+
+    &__icon{
+        font-size: 12px;
+        width: 15px;
+        padding-right: 10px;
     }
 }

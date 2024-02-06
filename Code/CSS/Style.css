@@ -143,4 +143,29 @@ body {
   color: #9356DC;
   justify-content: flex-end;
   font-size: 32px;
+}
+
+.footer {
+  background-color: #353535;
+  color: white;
+  padding: 30px 20px;
+}
+.footer__header-icon {
+  filter: brightness(0) invert(1);
+  width: 25%;
+  padding-bottom: 25px;
+}
+.footer__block {
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 10px;
+}
+.footer__block p {
+  margin: 0px;
+}
+.footer__icon {
+  font-size: 12px;
+  width: 15px;
+  padding-right: 10px;
 }/*# sourceMappingURL=Style.css.map */
