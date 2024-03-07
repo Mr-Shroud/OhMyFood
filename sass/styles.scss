@@ -582,7 +582,39 @@ html {
         opacity: 0;
     }
 }
+.item1,
+.item2 {
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+    
+}
 
+.item3 {
+    align-items: flex-end;
+    flex-grow: 1;
+    padding-right: 12px;
+    width: 10%;
+    overflow: hidden;
+    transition: left 1s 0.7s ease-in-out;
+    direction: rtl;
+    margin-top: 50px;
+}
+.item4  {
+    flex-grow: 0;
+    width: 0%;
+    overflow: hidden;
+    transition: width 1s ease-in-out;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translate(-50%);
+    }
+    to {
+        transform: translate(0);
+    }
+}
 .menu {
 
     display: flex;
@@ -629,16 +661,16 @@ html {
         }
 
         &:hover .item4 {
-            display: block;
-            animation: slide-in 1.5s ease-in-out;
+            
+            width: 70px;
         }
 
-            &:hover .item3 {
-            display: block;
+        &:hover .check {
+            display: flex;
+            
+        }
+
         
-            position: sticky;
-        
-           } 
 
         @keyframes slide-in {
             from {
@@ -672,13 +704,7 @@ html {
             text-overflow: ellipsis;
         }
 
-        h3 {
-            align-self: flex-end;
-            margin: 0px;
-            padding: 0px;
-            margin-top: 7px;
-            transition: all;
-        }
+       
 
 
 
@@ -695,41 +721,15 @@ html {
 
 }
 
-.hidden {
-    display: none;
-}
-
-.item1,
-.item2 {
-    width: 100%;
-}
-
-.item3,
-.item4 {
-    width: 50%;
-}
 
 
-.item3 {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    margin: 0px;
-    padding: 0px;
-    margin-top: 5px;
-    text-overflow: ellipsis;
-    font-weight: bold;
-    position: relative;
-    left: 14rem;
-
-}
 
 .check {
     position: relative;
-    left: 30px;
+    left: 20px;
     top: 20px;
     opacity: 1;
-    display: flex;
+    display: none;
     flex: 1;
     align-self: center;
     align-items: center;
@@ -741,7 +741,7 @@ html {
     max-height: 27px;
     color: $Tertiary-color;
     background-color: white;
-
+    
 
 
     &__background {
@@ -751,10 +751,10 @@ html {
         justify-self: flex-end;
         justify-content: center;
         background: $Tertiary-color;
-        width: 100px;
+        width: 0%;
         height: 100%;
         border-radius: 0px 15px 15px 0px;
-
+        
 
 
     }
