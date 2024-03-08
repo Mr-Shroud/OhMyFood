@@ -2,8 +2,10 @@
     "cSpell.words": [
         "Hoxton",
         "langoustine",
+        "millefeuille",
         "ohmyfood",
         "purée",
         "Shoreditch"
-    ]
+    ],
+    "livePreview.defaultPreviewPath": "/index.html"
 }

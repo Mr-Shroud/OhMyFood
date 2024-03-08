@@ -20,12 +20,11 @@ html {
 }
 
 .body {
-    display: grid;
-    grid-template-columns: 1fr;
+    
+    margin: 0;
 
 
 }
-
 
 
 .header {
@@ -155,7 +154,7 @@ html {
         }
     }
 
-    &__explore-button {
+    &__explore-button  {
         background-image: linear-gradient($Secondary-color, $primary-color);
         width: 218px;
         height: 50px;
@@ -185,10 +184,19 @@ html {
         top: -50px;
         max-width: 1024px;
         width: 100%;
-        margin: auto;
+       
+        @media only screen and (min-width: 768px) {
+            margin: auto;
+        }
 
 
-
+    }
+    &__button{
+        text-decoration: none;
+        color: white;
+        font-weight: 400;
+        position: relative;
+        top: 1rem;
     }
 }
 
@@ -230,11 +238,7 @@ html {
     max-width: 1024px;
     margin: auto;
 
-    @media only screen and (min-width: 768px) and (max-width: 1024px) {
-        position: absolute;
-        left: 20px;
-        top: 25rem;
-    }
+
 }
 
 #restaurants {
@@ -247,6 +251,7 @@ html {
         margin: auto;
         max-width: 1024px;
         justify-content: flex-start;
+        padding: 1rem;
 
         .restaurant__container {
             display: flex;
@@ -265,10 +270,10 @@ html {
     padding: 20px;
     background: white;
 
-    @media only screen and (min-width: 768px) {
-        padding: 2rem 13rem;
-        background: white;
-        margin: 0px;
+
+
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        padding: 1rem;
     }
 }
 
@@ -376,10 +381,7 @@ html {
         padding-bottom: 50px;
     }
 
-    @media only screen and (min-width: 768px) and (max-width: 1024px) {
-        margin-inline: 20px;
-        padding-inline: 20px;
-    }
+
 }
 
 .card {
@@ -422,6 +424,10 @@ html {
         flex: 1 1 45%;
         min-width: 360px;
 
+    }
+
+    @media only screen and (min-width: 992px) and (max-width: 1024px) {
+        max-width: 440px;
     }
 }
 
@@ -494,6 +500,14 @@ html {
         color: white;
         border: none;
         margin: 40px;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+        transition: all .3s;
+        transition-timing-function: ease-in-out;
+    }
+
+    &__order:hover {
+        box-shadow: 0px 6px 13px 0px rgba(0, 0, 0, 0.35);
+        filter: brightness(110%);
     }
 }
 
@@ -538,10 +552,10 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: $Secondary-color;
     z-index: 999;
     animation: loader-fade-out 3s ease-in-out both;
     pointer-events: none;
+    background-color: $Tertiary-color;
 }
 
 .loader {
@@ -561,7 +575,10 @@ html {
         left: 45%;
     }
 
+
 }
+
+
 
 @keyframes spin {
     0% {
@@ -582,25 +599,40 @@ html {
         opacity: 0;
     }
 }
+.ellipsis {
+    flex: 1;
+  
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .item1,
 .item2 {
-    flex-grow: 1;
+   max-width: 260px;
+   flex-shrink: 1;
     margin: 0;
     padding: 0;
-    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    p, h3 {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis
+    }
 }
 
 .item3 {
     align-items: flex-end;
-    flex-grow: 1;
+    flex-grow: 0;
     padding-right: 12px;
-    width: 10%;
+    width: 70px;
     overflow: hidden;
     transition: left 1s 0.7s ease-in-out;
     direction: rtl;
     margin-top: 50px;
 }
-.item4  {
+
+.item4 {
     flex-grow: 0;
     width: 0%;
     overflow: hidden;
@@ -611,10 +643,12 @@ html {
     from {
         transform: translate(-50%);
     }
+
     to {
         transform: translate(0);
     }
 }
+
 .menu {
 
     display: flex;
@@ -629,6 +663,8 @@ html {
     >h3 {
         font-weight: 400;
         padding-left: 12px;
+        
+
 
         &::after {
             content: "";
@@ -652,6 +688,8 @@ html {
         border-radius: 15px;
         box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.10);
         height: 69px;
+       
+        
 
         &__text {
             padding-top: 0px;
@@ -661,16 +699,16 @@ html {
         }
 
         &:hover .item4 {
-            
+
             width: 70px;
         }
 
         &:hover .check {
             display: flex;
-            
+
         }
 
-        
+
 
         @keyframes slide-in {
             from {
@@ -699,12 +737,11 @@ html {
         p {
             font-weight: 300;
             margin: 0px;
-            padding: 0px;
-
-            text-overflow: ellipsis;
+            padding: 0px;  
         }
 
-       
+
+
 
 
 
@@ -741,7 +778,7 @@ html {
     max-height: 27px;
     color: $Tertiary-color;
     background-color: white;
-    
+
 
 
     &__background {
@@ -754,10 +791,41 @@ html {
         width: 0%;
         height: 100%;
         border-radius: 0px 15px 15px 0px;
-        
+
 
 
     }
 
 
 }
+
+.food {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.starters {
+    animation: showNext 0.5s ease-in-out 1s forwards;
+}
+
+.mains {
+    animation: showNext 0.5s ease-in-out 2s forwards;
+}
+
+.desserts {
+    animation: showNext 0.5s ease-in-out 3s forwards;
+}
+
+@keyframes showNext {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
